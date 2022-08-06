@@ -1,0 +1,33 @@
+checkInterval: 3
+concurrent: 4
+gitlabUrl: https://gitlab.com/
+runnerRegistrationToken: "GR1348941D7v1hp6EwKuudPURjrXw"
+rbac:
+  clusterWideAccess: false
+  create: true
+  enabled: true
+resources:
+  limits:
+    memory: 2048Mi
+    cpu: 1000m
+  requests:
+    memory: 1024Mi
+    cpu: 500m
+runners:
+  image: ubuntu:16.04
+  privileged: true
+  builds:
+    cpuLimit: 200m
+    memoryLimit: 1024Mi
+    cpuRequests: 100m
+    memoryRequests: 128Mi
+  services:
+    cpuLimit: 200m
+    memoryLimit: 512Mi
+    cpuRequests: 100m
+    memoryRequests: 128Mi
+  helpers:
+    cpuLimit: 200m
+    memoryLimit: 512Mi
+    cpuRequests: 100m
+    memoryRequests: 128Mi
