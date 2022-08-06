@@ -10,19 +10,19 @@
 
 Please use technologies you have expertise on (GitLab, Ansible, Bash, Terraform, Helm, etc.) and send us all repositories. -->
 
-
 TODO:
-- [ ] Setup EKS Cluster Terraform, structure module, install Helm, EKS add-ons
-- [ ] Clone source code https://github.com/nahidulhasan/laravel-docker-k8s and running local test.
-- [ ] Install MySQL K8S, prepare script migrate DB for Laravel, automate pipeline migrate if necessary at the end stage.
-- [ ] Setup Helm repository in S3 using Terraform module, base helm chart application
-- [ ] Using Helm app to deploy Dockerfile locally
-- [ ] Using https://github.com/GoogleContainerTools/kaniko to Build Docker in Gitlab CI and publish to ECR
-- [ ] Deploy and manage GitLab Runner in cluster EKS, to make pipeline runnable
-- [ ] Using autoscaler to scale the cluster's worker nodes by number of pods or metrics.
-- [ ] Document, draw architecture, how it work
 
+- [x] Setup EKS Cluster Terraform, structure module, install Helm, EKS add-ons
+- [x] Clone source code https://github.com/nahidulhasan/laravel-docker-k8s and running local test.
+- [x] Install MySQL K8S, prepare script migrate DB for Laravel, automate pipeline migrate if necessary at the end stage.
+- [x] Setup Helm repository in S3 using Terraform module, base helm chart application
+- [x] Using Helm app to deploy Dockerfile locally.
+- [x] Using https://github.com/GoogleContainerTools/kaniko to Build Docker in Gitlab CI and publish to ECR.
+- [x] Deploy and manage GitLab Runner in cluster EKS, to make pipeline runnable.
+- [x] Using autoscaler to scale the cluster's worker nodes by number of pods or metrics.
+- [x] Document, draw architecture, how it work.
 
+<!--
 https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/set-up-a-helm-v3-chart-repository-in-amazon-s3.html
 
 helm s3 init s3://ty-helm/stable/myapp
@@ -43,8 +43,7 @@ sudo mv composer.phar /usr/local/bin/composer
 
 php artisan key:generate
 
-
-php artisan migrate  
+php artisan migrate
 
 APP_NAME=Laravel
 APP_ENV=local
@@ -130,4 +129,4 @@ EXPOSE 80
 helm package ./app
 helm s3 push --force ./app-0.0.1.tgz stable-myapp
 
-   - helm upgrade devops-laravel devops/app --install --force --namespace devops-laravel -f deployment/dev.yaml --set image.repository=${DOCKER_IMAGE},image.tag=${DOCKER_TAG}
+helm upgrade devops-laravel devops/app --install --force --namespace devops-laravel -f deployment/dev.yaml --set image.repository=${DOCKER_IMAGE},image.tag=${DOCKER_TAG} -->

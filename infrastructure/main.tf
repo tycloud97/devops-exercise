@@ -41,7 +41,6 @@ locals {
 }
 
 // Setup VPC network
-
 module "vpc" {
   source           = "./modules/vpc"
   eks_cluster_name = local.eks_cluster_name
@@ -53,7 +52,7 @@ module "iam" {
   name   = local.name
 }
 
-
+// Setup EKS Cluster
 module "eks" {
   source           = "./modules/eks"
   eks_cluster_name = local.eks_cluster_name
@@ -66,7 +65,7 @@ module "eks" {
   common_tags            = local.common_tags
 }
 
-# Datasource: 
+# Datasource
 data "aws_eks_cluster_auth" "cluster" {
   name = module.eks.cluster_id
 }
@@ -78,6 +77,8 @@ provider "kubernetes" {
   token                  = data.aws_eks_cluster_auth.cluster.token
 }
 
+
+// Kubernetes Workloads
 module "k8s" {
   source                 = "./modules/k8s"
   eks_nodegroup_role_arn = module.iam.eks_nodegroup_role_arn

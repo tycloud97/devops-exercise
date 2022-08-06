@@ -8,11 +8,11 @@ resource "kubernetes_deployment_v1" "mysql_deployment" {
     selector {
       match_labels = {
         app = "mysql"
-      }          
+      }
     }
     strategy {
       type = "Recreate"
-    }  
+    }
     template {
       metadata {
         labels = {
@@ -30,31 +30,31 @@ resource "kubernetes_deployment_v1" "mysql_deployment" {
         volume {
           name = "usermanagement-dbcreation-script"
           config_map {
-            name = kubernetes_config_map_v1.config_map.metadata.0.name 
+            name = kubernetes_config_map_v1.config_map.metadata.0.name
           }
         }
         container {
-          name = "mysql"
+          name  = "mysql"
           image = "mysql:5.6"
           port {
             container_port = 3306
-            name = "mysql"
+            name           = "mysql"
           }
           env {
-            name = "MYSQL_ROOT_PASSWORD"
+            name  = "MYSQL_ROOT_PASSWORD"
             value = "dbpassword11"
           }
           volume_mount {
-            name = "mysql-persistent-storage"
+            name       = "mysql-persistent-storage"
             mount_path = "/var/lib/mysql"
           }
           volume_mount {
-            name = "usermanagement-dbcreation-script"
+            name       = "usermanagement-dbcreation-script"
             mount_path = "/docker-entrypoint-initdb.d" #https://hub.docker.com/_/mysql Refer Initializing a fresh instance                                            
           }
         }
       }
-    }      
+    }
   }
-  
+
 }

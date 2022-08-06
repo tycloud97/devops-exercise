@@ -29,6 +29,11 @@ resource "aws_iam_role_policy_attachment" "eks-AmazonEC2ContainerRegistryReadOnl
   role       = aws_iam_role.eks_nodegroup_role.name
 }
 
+resource "aws_iam_role_policy_attachment" "eks-AmazonEC2ContainerRegistryPowerUser" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser"
+  role       = aws_iam_role.eks_nodegroup_role.name
+}
+
 # Autoscaling Full Access
 resource "aws_iam_role_policy_attachment" "eks-Autoscaling-Full-Access" {
   policy_arn = "arn:aws:iam::aws:policy/AutoScalingFullAccess"
