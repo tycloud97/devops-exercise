@@ -81,6 +81,7 @@
 ### Cost Optimization Pillar
 
 - Autoscale based on workloads with **Kubernetes Cluster Autoscaler**.
+- Using spot instances for EKS worker node.
 
 ### Sustainability Pillar
 
