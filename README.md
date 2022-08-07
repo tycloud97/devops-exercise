@@ -129,6 +129,7 @@ helm s3 init s3://ty-helm/stable/myapp
 helm repo add stable-myapp s3://ty-helm/stable/myapp/
 helm repo add gitlab https://charts.gitlab.io
 aws eks --region ap-southeast-1 update-kubeconfig --name ty-dev-eksdemo
+kubectl get pods --all-namespaces | grep -i running | wc -l
 helm upgrade --namespace default gitlab-runner -f gitlab-runner-values.yaml gitlab/gitlab-runner
 php artisan key:generate
 php artisan migrate
