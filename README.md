@@ -102,17 +102,17 @@
 
 **Screenshot**:
 
-![](/Users/ty/Documents/Projects/CMC/devops-exercise/540145b440d8f88e25c687fe25cf715c3d3ca700.png)
+![](./docs/2022-08-07-12-57-11-image.png)
 
-![](/Users/ty/Documents/Projects/CMC/devops-exercise/05422fb25f0539940eaf33593a06c21ca07e91d0.png)
+![](./docs/2022-08-07-12-57-28-image.png)
 
-![](/Users/ty/Documents/Projects/CMC/devops-exercise/40087d1f7ece46af736e13858ea070635517ce98.png)
+![](./docs/2022-08-07-12-59-50-image.png)
 
-![](/Users/ty/Documents/Projects/CMC/devops-exercise/e0a5eb7708bf99dea9812fee7d48107e122780fc.png)
+![](./docs/2022-08-07-13-00-44-image.png)
 
-![](/Users/ty/Documents/Projects/CMC/devops-exercise/71dfdde20ae32d9dfb9e49dd8f8f224878636203.png)
+![](./docs/2022-08-07-13-02-49-image.png)
 
-![](/Users/ty/Documents/Projects/CMC/devops-exercise/d3344f54a51c276a1b0ba2d28d5d9c1091817d47.png)
+![](./docs/2022-08-07-13-03-06-image.png)
 
 ## References
 
